@@ -13,7 +13,7 @@ class Apple implements Eatable {
     }
 }
 
-class Box<T extends Eatable> {
+class Box<T> {
     private T ob;
 
     public void set(T o) {
@@ -21,10 +21,10 @@ class Box<T extends Eatable> {
     }
 
     // 한입 먹고 반환하는 행위의 메소드로 수정
-    public T get() {
-        System.out.println(ob.eat()); // Eatable로 제한했기 때문에 호출 가능
-        return ob;
-    }
+    // public T get() {
+    // System.out.println(ob.eat()); // Eatable로 제한했기 때문에 호출 가능
+    // return ob;
+    // }
 }
 
 public class BoundedInterfaceBox {
@@ -32,7 +32,7 @@ public class BoundedInterfaceBox {
         Box<Apple> box = new Box<>();
         box.set(new Apple());
 
-        Apple ap = box.get();
-        System.out.println(ap);
+        // Apple ap = box.get();
+        // System.out.println(ap);
     }
 }
